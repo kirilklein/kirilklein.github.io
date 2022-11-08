@@ -82,10 +82,7 @@ analytics:
 author:
   name             : "Kiril Klein"
   avatar           : "profile.png"
-  bio              : > 
-                    "PhD Fellow 
-                    Computer Science Department 
-                    University of Copenhagen"
+  bio              : "PhD Fellow Computer Science Department University of Copenhagen"
   location         : "Copenhagen, Denmark"
   employer         :
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
