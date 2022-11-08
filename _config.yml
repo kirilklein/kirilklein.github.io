@@ -82,7 +82,10 @@ analytics:
 author:
   name             : "Kiril Klein"
   avatar           : "profile.png"
-  bio              : "PhD Fellow\n Computer Science Department\n University of Copenhagen"
+  bio              : > 
+                    "PhD Fellow 
+                    Computer Science Department 
+                    University of Copenhagen"
   location         : "Copenhagen, Denmark"
   employer         :
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
@@ -100,7 +103,7 @@ author:
   google_plus      :
   keybase          :
   instagram        :
-  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
+  impactstory      : # "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
   orcid            : "http://orcid.org/0000-0001-8779-0209"
