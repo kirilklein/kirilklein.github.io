@@ -1,0 +1,126 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1b1b1f;
+  --muted: #5c5f68;
+  --rule: #e3e4e8;
+  --accent: #1c5fa8;
+  --accent-bg: #f2f5fa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14151a;
+    --fg: #e6e7ea;
+    --muted: #9a9da6;
+    --rule: #2a2c33;
+    --accent: #7fb3ec;
+    --accent-bg: #1c1f27;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+}
+
+a { color: var(--accent); }
+a:hover { text-decoration: none; }
+
+header { margin-bottom: 3rem; }
+
+h1 {
+  font-size: 2.1rem;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.suffix { color: var(--muted); font-weight: 500; }
+
+.role {
+  margin: 0.4rem 0 1.2rem;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.1rem;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+section { margin: 0 0 2.75rem; }
+
+h2 {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+  margin: 0 0 1.1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.3rem;
+  line-height: 1.4;
+}
+
+p { margin: 0 0 0.85rem; }
+
+.lead { font-size: 1.1rem; }
+
+.item { margin-bottom: 1.75rem; }
+.item:last-of-type { margin-bottom: 0; }
+
+.meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-bottom: 0.5rem;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-top: 1.25rem;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0.45rem 0.95rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--accent-bg);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.button:hover { border-color: var(--accent); }
+
+footer {
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 480px) {
+  main { padding-top: 2.5rem; }
+  h1 { font-size: 1.7rem; }
+}
