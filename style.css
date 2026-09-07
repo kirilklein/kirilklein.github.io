@@ -60,12 +60,15 @@ strong { color: var(--fg); font-weight: 600; }
 .note, .meta, .text-link { font-size: 12px; }
 .note { margin: 18px 0 0; }
 .meta { margin-bottom: 7px; }
-.thesis { padding: 27px 30px; background: var(--accent-bg); border: 1px solid #dce4dc; border-radius: 6px; margin-bottom: 30px; }
-.thesis .eyebrow { font-size: 10px; margin-bottom: 13px; }
-.thesis h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: 25px; line-height: 1.3; }
-.thesis > a { font-size: 13px; font-weight: 500; text-decoration: none; }
-.thesis > a:hover { text-decoration: underline; }
+.feature-card { padding: 27px 30px; background: var(--accent-bg); border: 1px solid #dce4dc; border-radius: 6px; margin-bottom: 30px; }
+.feature-card .eyebrow { font-size: 10px; margin-bottom: 13px; }
+.feature-card h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: 25px; line-height: 1.3; }
+.feature-card > a { font-size: 13px; font-weight: 500; text-decoration: none; }
+.feature-card > a:hover { text-decoration: underline; }
 .file-info { font-size: 11px; font-weight: 400; color: var(--muted); margin-inline: 8px; }
+.project-links { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 18px 0 0; font-size: 13px; font-weight: 500; }
+.project-links a { text-decoration: none; }
+.project-links a:hover { text-decoration: underline; }
 .item { margin-bottom: 25px; }
 .item + .item { padding-top: 23px; border-top: 1px solid var(--rule); }
 .item p:last-child { margin-bottom: 0; font-size: 14px; }
@@ -90,13 +93,13 @@ footer .eyebrow { margin-bottom: 12px; }
   .hero { grid-template-columns: 1fr; gap: 30px; padding-top: 36px; }
   .portrait { grid-row: 1; width: 132px; }
   .hero .eyebrow { letter-spacing: .07em; }
-  .thesis { padding: 22px; }
-  .thesis h3 { font-size: 23px; }
+  .feature-card { padding: 22px; }
+  .feature-card h3 { font-size: 23px; }
   .contact-title { font-size: 25px; }
 }
 @media (prefers-color-scheme: dark) {
   :root { color-scheme: dark; --bg: #191f20; --fg: #e5e8e3; --muted: #adb6b1; --rule: #374140; --accent: #a0cbb7; --accent-bg: #242f2b; }
   .button.primary { background: #a0cbb7; color: #191f20; }
   .button.primary:hover { background: #b8ddcc; }
-  .thesis { border-color: var(--rule); }
+  .feature-card { border-color: var(--rule); }
 }
