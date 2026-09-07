@@ -1,0 +1,13 @@
+{
+  "name": "kirilklein.github.io",
+  "private": true,
+  "scripts": {
+    "lint": "html-validate index.html && stylelint style.css",
+    "test": "python3 -m unittest discover -s tests -v"
+  },
+  "devDependencies": {
+    "html-validate": "^11.14.0",
+    "stylelint": "^17.15.0",
+    "stylelint-config-recommended": "^18.0.0"
+  }
+}
