@@ -1,39 +1,55 @@
-# kirilklein.github.io
+# Kiril Klein — personal portfolio
 
-Personal site at <https://kirilklein.github.io> — CV, publications, and PhD thesis.
+[View the live site](https://kirilklein.github.io/)
 
-Static HTML, no build step. `.nojekyll` keeps GitHub Pages from running Jekyll.
+Source for my personal website and portfolio. It brings together my work in
+machine learning engineering, causal inference, and clinical AI, including:
 
-```
-index.html                        the whole site
-style.css                         the whole stylesheet
-cv/causal-ds-en.md                source for the English causal inference CV
-assets/Kiril_Klein_CV.pdf         built from personal/rabota/cv (src/ml-engineer-en.md)
-assets/Kiril_Klein_PhD_Thesis.pdf
-assets/Kiril_Klein_Causal_CV_EN.pdf  English causal inference CV
-assets/kiril-klein.png              original portrait, cropped with CSS
-```
+- selected research and publications;
+- open-source projects such as [Causal Sandbox](https://kirilklein.github.io/causal-sandbox/)
+  and [CausalEstimate](https://github.com/kirilklein/CausalEstimate);
+- my CV and PhD thesis; and
+- links to GitHub, Google Scholar, and LinkedIn.
 
-To update the CV, edit `src/ml-engineer-en.md` in the CV repo, run `./build.sh` there,
-and copy `out/Kiril_Klein_ML_Engineer_EN.pdf` over `assets/Kiril_Klein_CV.pdf`.
+The site is deliberately small: static HTML and CSS, with no application framework
+or build step. GitHub Pages publishes the `master` branch.
 
-The causal-inference download is built from `cv/causal-ds-en.md` using the Pandoc
-setup in `personal/rabota/cv`. Copy the rebuilt PDF into `assets/`.
-The portrait uses a circular CSS background crop; adjust `.portrait` in `style.css`
-to change the framing without changing the original photograph.
+## Project structure
 
-Preview locally with `python3 -m http.server 4173 --bind 127.0.0.1`, then open
-<http://127.0.0.1:4173>. Check narrow mobile and desktop widths in light and dark mode.
+| Path | Purpose |
+| --- | --- |
+| `index.html` | Site content and metadata |
+| `style.css` | Layout, responsive styles, and light/dark themes |
+| `assets/` | Portrait, CVs, and PhD thesis |
+| `cv/causal-ds-en.md` | Source for the causal-inference CV |
+| `tests/test_site.py` | Link, asset, metadata, and sitemap integrity checks |
+| `.github/workflows/ci.yml` | Pull-request and `master` branch checks |
+| `.nojekyll` | Disables Jekyll processing on GitHub Pages |
 
-Before opening a pull request, install the lint tools with `npm ci`, then run:
+## Local development
 
-```
+Install the lint dependencies and run the checks:
+
+```sh
+npm ci
 npm run lint
 npm test
 ```
 
-CI runs the same HTML/CSS lint and site-integrity tests on pull requests and pushes
-to `master`.
+Preview the site locally:
 
-GitHub Pages currently publishes `master`. This refresh is based on the existing
-`site-rewrite` draft and must be merged into the publishing branch to go live.
+```sh
+python3 -m http.server 4173 --bind 127.0.0.1
+```
+
+Then open <http://127.0.0.1:4173> and check desktop and narrow mobile widths in
+both light and dark mode.
+
+## Updating documents
+
+The main CV is built in the separate CV project and copied to
+`assets/Kiril_Klein_CV.pdf`. The causal-inference CV is built from
+`cv/causal-ds-en.md` and copied to `assets/Kiril_Klein_Causal_CV_EN.pdf`.
+
+The portrait uses the original `assets/kiril-klein.png` image with a CSS crop. Adjust
+`.portrait` in `style.css` to change its framing without modifying the source image.
