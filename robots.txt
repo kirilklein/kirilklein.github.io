@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /assets/Kiril_Klein_Senior_Data_Scientist.pdf
+Disallow: /assets/Kiril_Klein_ML_Engineer_NLP_SberHealth_RU.pdf
 
 Sitemap: https://kirilklein.github.io/sitemap.xml
