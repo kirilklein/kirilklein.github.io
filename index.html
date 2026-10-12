@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kiril Klein, PhD — Machine Learning Engineer</title>
-<meta name="description" content="Machine Learning Engineer with a PhD in Machine Learning and Causal Inference. Transformers, NLP on clinical data, and causal inference on electronic health records.">
+<meta name="description" content="Machine Learning Engineer with a PhD in Computer Science. NLP and LLMs, transformers for health records, and causal inference from observational data.">
 <link rel="canonical" href="https://kirilklein.github.io/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Kiril Klein, PhD — Machine Learning Engineer">
-<meta property="og:description" content="Machine Learning Engineer with a PhD in Machine Learning and Causal Inference. Transformers, NLP on clinical data, and causal inference on electronic health records.">
+<meta property="og:description" content="Machine Learning Engineer with a PhD in Computer Science. NLP and LLMs, transformers for health records, and causal inference from observational data.">
 <meta property="og:url" content="https://kirilklein.github.io/">
+<meta property="og:image" content="https://kirilklein.github.io/assets/kiril-klein.png">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
@@ -40,10 +41,10 @@
 
 <header class="hero">
   <div class="intro">
-  <p class="eyebrow">Machine learning · Causal inference · Healthcare</p>
+  <p class="eyebrow">Machine learning · NLP &amp; LLMs · Causal inference</p>
   <h1>Kiril Klein<span class="suffix">, PhD</span></h1>
   <p class="role">From clinical data to<br>reliable models and evidence.</p>
-  <p class="hero-summary">I build machine learning systems for healthcare and develop methods to estimate treatment effects from observational data.</p>
+  <p class="hero-summary">I build ML systems for healthcare end to end, with NLP, LLMs and transformers for longitudinal records, and develop methods to estimate treatment effects from observational data.</p>
   <p class="location">Machine Learning Engineer at Aiomic · Copenhagen</p>
   <p class="links">
     <a class="button primary" href="assets/Kiril_Klein_CV.pdf">Download CV <span aria-hidden="true">↗</span></a>
@@ -65,13 +66,14 @@
     Research depth. Engineering ownership.
   </p>
   <p>
-    At <strong>Aiomic</strong>, I develop the clinical ML stack, from data requirements and
-    model training to blinded validation and production integration. My work combines
-    transformers, clinical NLP, and classical machine learning.
+    At <strong>Aiomic</strong>, I designed and built the ML system for clinical document
+    analysis and brought it into production. It combines gradient boosting, fine-tuned encoder
+    transformers and LLMs in one workflow, with blinded validation before deployment.
   </p>
   <p>I completed my PhD at the <strong>University of Copenhagen</strong> and the Pioneer Centre
-    for AI, working on scalable causal inference with electronic health records in the PHAIR
-    project. My earlier training is in physics and computational physics.</p>
+    for AI. I developed a method for estimating causal drug effects from the longitudinal
+    records of more than 2 million patients, in PHAIR, a project involving the Danish Medicines
+    Agency. My earlier training is in physics and computational physics.</p>
   <p class="note"><a href="assets/Kiril_Klein_Causal_CV_EN.pdf">Causal inference CV (PDF)</a></p>
   </div>
 </section>
@@ -96,7 +98,7 @@
   <article class="item">
     <p class="meta">Machine Learning for Healthcare · 2024 · Joint first author</p>
     <h3><a href="https://proceedings.mlr.press/v252/odgaard24a.html">CORE-BEHRT: A Carefully Optimized and Rigorously Evaluated BEHRT <span aria-hidden="true">↗</span></a></h3>
-    <p>Systematic improvements to EHR data representation, model architecture, and training, evaluated across 25 clinical prediction tasks.</p>
+    <p>Systematic improvements to EHR data representation, model architecture, and training. Outperformed the baseline on 24 of 25 clinical prediction tasks.</p>
   </article>
   <a class="text-link" href="https://scholar.google.com/citations?user=8k9TwncAAAAJ&hl=en">All publications on Google Scholar <span aria-hidden="true">↗</span></a>
   </div>
@@ -118,14 +120,26 @@
     </p>
   </article>
   <article class="item">
-    <h3><a href="https://github.com/kirilklein/CausalEstimate">CausalEstimate <span aria-hidden="true">↗</span></a></h3>
-    <p>A Python library for treatment-effect estimation from propensity scores and outcome predictions, including IPW, AIPW, TMLE, and matching.</p>
+    <h3><a href="https://kirilklein.github.io/CausalEstimate/">CausalEstimate <span aria-hidden="true">↗</span></a></h3>
+    <p>
+      A Python library for treatment-effect estimation from propensity scores and outcome predictions, including IPW, AIPW, TMLE, and matching.
+      <a href="https://github.com/kirilklein/CausalEstimate">Source code</a>.
+    </p>
   </article>
   <article class="item">
     <h3><a href="https://github.com/FGA-DIKU/BONSAI">BONSAI <span aria-hidden="true">↗</span></a></h3>
     <p>
-      A collaborative framework for transformer modelling of electronic health records.
-      I contributed across the codebase and coordinated development of the PHAIR-EHR causal-inference extension.
+      A framework for transformer modelling of electronic health records.
+      I am its main developer and coordinated the team behind its causal-inference extension,
+      <a href="https://github.com/kirilklein/bonsai-causal">BONSAI Causal</a>.
+      <a href="https://doi.org/10.21105/joss.08869">Paper (JOSS)</a>.
+    </p>
+  </article>
+  <article class="item">
+    <h3><a href="https://github.com/statsmodels/statsmodels/pulls?q=is%3Apr+author%3Akirilklein+is%3Amerged">statsmodels <span aria-hidden="true">↗</span></a></h3>
+    <p>
+      Four merged pull requests to <code>TreatmentEffect</code>, adding overlap and balance diagnostics
+      and ATET/ATC for AIPW, and fixing propensity clipping and the GMM moment conditions.
     </p>
   </article>
   <a class="text-link" href="https://github.com/kirilklein">More on GitHub <span aria-hidden="true">↗</span></a>
