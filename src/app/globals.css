@@ -223,7 +223,7 @@ h3 a { color: var(--fg); }
 h3 a:hover { color: var(--accent); }
 .feature {
   padding: 28px 30px;
-  margin-bottom: 32px;
+  margin-top: 40px;
   background: var(--accent-bg);
   border: 1px solid var(--rule);
   border-left: 2px solid var(--accent);

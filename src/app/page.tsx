@@ -97,18 +97,6 @@ export default function HomePage() {
           <SectionHeading number="02 / Research" id="research">
             Selected research
           </SectionHeading>
-          <article className="feature">
-            <p className="label">PhD thesis · University of Copenhagen · 2026</p>
-            <h3>Scalable Causal Inference on Electronic Health Records Using Transformers</h3>
-            <p>
-              Connecting EHR transformers with target trial emulation: from clinical prediction to
-              treatment-effect estimation and large-scale drug-safety screening.
-            </p>
-            <a href="/assets/Kiril_Klein_PhD_Thesis.pdf">
-              Read the thesis <span className="file-info">PDF · 11 MB</span>
-              <Arrow />
-            </a>
-          </article>
           <article className="item">
             <p className="meta">NEJM AI · 2026 · Co-author</p>
             <h3>
@@ -139,6 +127,18 @@ export default function HomePage() {
             All publications on Google Scholar
             <Arrow />
           </a>
+          <article className="feature">
+            <p className="label">PhD thesis · University of Copenhagen · 2026</p>
+            <h3>Scalable Causal Inference on Electronic Health Records Using Transformers</h3>
+            <p>
+              Connecting EHR transformers with target trial emulation: from clinical prediction to
+              treatment-effect estimation and large-scale drug-safety screening.
+            </p>
+            <a href="/assets/Kiril_Klein_PhD_Thesis.pdf">
+              Read the thesis <span className="file-info">PDF · 11 MB</span>
+              <Arrow />
+            </a>
+          </article>
         </section>
 
         <section className="section" aria-labelledby="software">
