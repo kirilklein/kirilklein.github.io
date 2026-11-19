@@ -172,6 +172,18 @@ export default function HomePage() {
               <a href="https://doi.org/10.21105/joss.08869">Paper (JOSS)</a>.
             </p>
           </article>
+          <article className="item">
+            <h3>
+              <a href="https://github.com/statsmodels/statsmodels/pulls?q=is%3Apr+author%3Akirilklein+is%3Amerged">
+                statsmodels
+                <Arrow />
+              </a>
+            </h3>
+            <p>
+              Contributions to <code>TreatmentEffect</code>: overlap and balance diagnostics,
+              ATET/ATC for AIPW, and fixes to propensity clipping and the GMM moment conditions.
+            </p>
+          </article>
           <a className="text-link" href={GITHUB_URL}>
             More on GitHub
             <Arrow />
