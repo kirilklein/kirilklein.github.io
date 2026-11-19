@@ -43,6 +43,18 @@ const scenarios = {
       await page.waitForTimeout(2500);
     },
   },
+  "agent-field-atlas": {
+    url: "https://kirilklein.github.io/agent-field-atlas/",
+    async prepare(page) {
+      await page.getByRole("button", { name: "Open the map" }).click();
+      await page.waitForTimeout(3000);
+    },
+    async act(page) {
+      await page.waitForTimeout(2000);
+      await page.evaluate(() => (window.location.hash = "#agent-loop"));
+      await page.waitForTimeout(6500);
+    },
+  },
   "bolmo-explainer": {
     url: "https://kirilklein.github.io/bolmo-explainer/",
     async act(page) {
@@ -71,6 +83,7 @@ async function record(slug, browser) {
   const page = await context.newPage();
   await page.goto(scenario.url, { waitUntil: "load" });
   await page.waitForTimeout(6000);
+  if (scenario.prepare) await scenario.prepare(page);
   const secondsBeforeAction = (Date.now() - recordingStartedAt) / 1000;
   await scenario.act(page);
   await context.close();

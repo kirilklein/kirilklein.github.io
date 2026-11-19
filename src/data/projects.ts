@@ -27,6 +27,15 @@ export const projects: Project[] = [
     source: "https://github.com/kirilklein/causal-sandbox",
   },
   {
+    slug: "agent-field-atlas",
+    tag: "LLM agents",
+    title: "Agent Field Atlas",
+    blurb:
+      "A map of LLM agents that you cross by building one: a trip planner in plain Python, from a single model call to an evaluated agent.",
+    url: "https://kirilklein.github.io/agent-field-atlas/",
+    source: "https://github.com/kirilklein/agent-field-atlas",
+  },
+  {
     slug: "bolmo-explainer",
     tag: "Language models · Paper",
     title: "Bolmo Explainer",

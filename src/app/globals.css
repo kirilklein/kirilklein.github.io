@@ -179,7 +179,7 @@ h2 {
 .section > .text-link,
 .prose { max-width: 760px; }
 
-.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
+.card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .card {
   position: relative;
   display: flex;
@@ -257,6 +257,7 @@ footer { padding: 72px 0 28px; border-top: 1px solid var(--rule); }
   .navigation, main { padding-inline: 20px; }
   .hero { grid-template-columns: 1fr; gap: 32px; padding: 48px 0 56px; }
   .hero::before { inset: 0 -20px; }
+  .card-grid { grid-template-columns: 1fr; }
   .portrait { grid-row: 1; width: 132px; }
   .section, footer { padding-block: 52px 52px; }
   footer { padding-bottom: 24px; }
