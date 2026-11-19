@@ -11,45 +11,57 @@ machine learning engineering, causal inference, and clinical AI, including:
 - my CV and PhD thesis; and
 - links to GitHub, Google Scholar, and LinkedIn.
 
-The site is deliberately small: static HTML and CSS, with no application framework
-or build step. GitHub Pages publishes the `master` branch.
+The site is a single page built with Next.js and exported as static HTML. A GitHub Actions
+workflow builds it and publishes the `out/` directory to GitHub Pages on every push to `master`.
 
 ## Project structure
 
 | Path | Purpose |
 | --- | --- |
-| `index.html` | Site content and metadata |
-| `style.css` | Layout, responsive styles, and light/dark themes |
-| `assets/` | Portrait, CVs, and PhD thesis |
+| `src/app/page.tsx` | Page content |
+| `src/app/layout.tsx` | Metadata, structured data, and fonts |
+| `src/app/globals.css` | Layout, responsive styles, and dark/light themes |
+| `src/data/projects.ts` | The explainer cards |
+| `src/components/ProjectCard.tsx` | One card with its looping preview |
+| `public/assets/` | Portrait, CVs, and PhD thesis |
+| `public/previews/` | Card clips and posters |
+| `scripts/record-previews.mjs` | Records the card clips from the live explainers |
 | `cv/causal-ds-en.md` | Source for the causal-inference CV |
-| `tests/test_site.py` | Link, asset, metadata, and sitemap integrity checks |
-| `.github/workflows/ci.yml` | Pull-request and `master` branch checks |
-| `.nojekyll` | Disables Jekyll processing on GitHub Pages |
+| `tests/test_site.py` | Link, asset, metadata, and sitemap checks on the export |
+| `.github/workflows/` | Pull-request checks and the Pages deployment |
 
 ## Local development
 
-Install the lint dependencies and run the checks:
-
 ```sh
 npm ci
+npm run dev        # http://localhost:3000
+```
+
+Run the checks. The tests read the static export, so build first:
+
+```sh
 npm run lint
+npm run build
 npm test
 ```
 
-Preview the site locally:
+Check desktop and narrow mobile widths in both dark and light mode.
+
+## Adding an explainer card
+
+Add an entry to `src/data/projects.ts` and a scenario with the same slug to
+`scripts/record-previews.mjs`, then record its clip (needs `ffmpeg`):
 
 ```sh
-python3 -m http.server 4173 --bind 127.0.0.1
+npx playwright install chromium
+node scripts/record-previews.mjs <slug>
 ```
-
-Then open <http://127.0.0.1:4173> and check desktop and narrow mobile widths in
-both light and dark mode.
 
 ## Updating documents
 
 The main CV is built in the separate CV project and copied to
-`assets/Kiril_Klein_CV.pdf`. The causal-inference CV is built from
-`cv/causal-ds-en.md` and copied to `assets/Kiril_Klein_Causal_CV_EN.pdf`.
+`public/assets/Kiril_Klein_CV.pdf`. The causal-inference CV is built from
+`cv/causal-ds-en.md` and copied to `public/assets/Kiril_Klein_Causal_CV_EN.pdf`.
 
-The portrait uses the original `assets/kiril-klein.png` image with a CSS crop. Adjust
-`.portrait` in `style.css` to change its framing without modifying the source image.
+The portrait is `public/assets/kiril-klein.png`, cropped to a circle by `.portrait` in
+`src/app/globals.css`.

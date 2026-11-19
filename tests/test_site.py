@@ -6,7 +6,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[1] / "out"
 
 
 class SiteParser(HTMLParser):
@@ -59,22 +59,27 @@ class SiteTests(unittest.TestCase):
             if parsed.scheme or parsed.netloc:
                 continue
             if parsed.path:
-                target = ROOT / unquote(parsed.path)
+                target = ROOT / unquote(parsed.path).lstrip("/")
                 self.assertTrue(target.is_file(), f"Missing local target: {reference}")
             if parsed.fragment and not parsed.path:
                 self.assertIn(parsed.fragment, ids, f"Missing anchor: {reference}")
 
     def test_css_assets_exist(self):
-        css = (ROOT / "style.css").read_text(encoding="utf-8")
-        for raw_reference in re.findall(r"url\(([^)]+)\)", css):
-            reference = raw_reference.strip(" \"'")
-            parsed = urlsplit(reference)
-            if parsed.scheme or parsed.netloc or reference.startswith("data:"):
-                continue
-            self.assertTrue(
-                (ROOT / unquote(parsed.path)).is_file(),
-                f"Missing CSS asset: {reference}",
-            )
+        stylesheets = sorted(ROOT.glob("_next/**/*.css"))
+        self.assertTrue(stylesheets, "No stylesheets found in the export")
+        for stylesheet in stylesheets:
+            css = stylesheet.read_text(encoding="utf-8")
+            for raw_reference in re.findall(r"url\(([^)]+)\)", css):
+                reference = raw_reference.strip(" \"'")
+                parsed = urlsplit(reference)
+                if parsed.scheme or parsed.netloc or reference.startswith("data:"):
+                    continue
+                asset_path = unquote(parsed.path)
+                if asset_path.startswith("/"):
+                    target = ROOT / asset_path.lstrip("/")
+                else:
+                    target = stylesheet.parent / asset_path
+                self.assertTrue(target.is_file(), f"Missing CSS asset: {reference}")
 
     def test_structured_data_is_valid_json(self):
         self.assertTrue(self.index.json_ld, "No JSON-LD structured data found")
