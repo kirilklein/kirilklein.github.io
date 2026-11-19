@@ -30,7 +30,7 @@ const personStructuredData = {
   honorificSuffix: "PhD",
   jobTitle: "Machine Learning Engineer",
   url: "https://kirilklein.github.io/",
-  email: "mailto:kiril.vadimovic.klein@gmail.com",
+  email: "mailto:kiril.vadimovic.klein+website@gmail.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Copenhagen",

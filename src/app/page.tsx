@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
 
-const EMAIL = "kiril.vadimovic.klein@gmail.com";
+const EMAIL = "kiril.vadimovic.klein+website@gmail.com";
 const GITHUB_URL = "https://github.com/kirilklein";
 const SCHOLAR_URL = "https://scholar.google.com/citations?user=8k9TwncAAAAJ&hl=en";
 const LINKEDIN_URL = "https://www.linkedin.com/in/kiril-klein-phd-574809211";
