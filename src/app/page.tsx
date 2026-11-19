@@ -98,19 +98,6 @@ export default function HomePage() {
             Selected research
           </SectionHeading>
           <article className="item">
-            <p className="meta">NEJM AI · 2026 · Co-author</p>
-            <h3>
-              <a href="https://doi.org/10.1056/AIra2501253">
-                MEDS — An Emerging Data Standard and Ecosystem for Health AI Research
-                <Arrow />
-              </a>
-            </h3>
-            <p>
-              A shared data standard and ecosystem for machine learning on structured medical
-              records.
-            </p>
-          </article>
-          <article className="item">
             <p className="meta">Machine Learning for Healthcare · 2024 · Joint first author</p>
             <h3>
               <a href="https://proceedings.mlr.press/v252/odgaard24a.html">
@@ -121,6 +108,19 @@ export default function HomePage() {
             <p>
               Systematic improvements to EHR data representation, model architecture, and training.
               Outperformed the baseline on 24 of 25 clinical prediction tasks.
+            </p>
+          </article>
+          <article className="item">
+            <p className="meta">NEJM AI · 2026 · Co-author</p>
+            <h3>
+              <a href="https://doi.org/10.1056/AIra2501253">
+                MEDS — An Emerging Data Standard and Ecosystem for Health AI Research
+                <Arrow />
+              </a>
+            </h3>
+            <p>
+              A shared data standard and ecosystem for machine learning on structured medical
+              records.
             </p>
           </article>
           <a className="text-link" href={SCHOLAR_URL}>
@@ -223,9 +223,6 @@ export default function HomePage() {
 
         <footer id="contact">
           <p className="label">Get in touch</p>
-          <p className="contact-title">
-            Let’s talk about your next research or engineering challenge.
-          </p>
           <a className="email" href={`mailto:${EMAIL}`}>
             {EMAIL}
             <Arrow />

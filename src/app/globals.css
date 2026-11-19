@@ -242,7 +242,6 @@ h3 a:hover { color: var(--accent); }
 .prose .buttons { margin-top: 26px; }
 
 footer { padding: 72px 0 28px; border-top: 1px solid var(--rule); }
-.contact-title { max-width: 16em; font-size: clamp(28px, 4vw, 44px); font-weight: 600; line-height: 1.15; letter-spacing: -.035em; }
 .email { font-family: var(--font-mono), ui-monospace, monospace; font-size: 15px; overflow-wrap: anywhere; }
 .footer-note {
   display: flex;
