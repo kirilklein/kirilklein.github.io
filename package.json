@@ -2,12 +2,23 @@
   "name": "kirilklein.github.io",
   "private": true,
   "scripts": {
-    "lint": "html-validate index.html && stylelint style.css",
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "eslint",
     "test": "python3 -m unittest discover -s tests -v"
   },
+  "dependencies": {
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
   "devDependencies": {
-    "html-validate": "^11.14.0",
-    "stylelint": "^17.15.0",
-    "stylelint-config-recommended": "^18.0.0"
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.6",
+    "playwright": "^1.65.1",
+    "typescript": "^6.0.3"
   }
 }
